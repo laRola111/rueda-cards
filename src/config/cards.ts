@@ -2,6 +2,9 @@ export type SocialLinks = {
   whatsapp?: string;
   email?: string;
   instagram?: string;
+  tiktok?: string;
+  facebook?: string;
+  linkedin?: string;
   website?: string;
 };
 
