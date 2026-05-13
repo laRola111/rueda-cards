@@ -98,11 +98,22 @@ export default function IngenioCard({ profile }: { profile: ProfileData }) {
           {/* Yellow Decorative Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-yellow-400/10 blur-2xl rounded-full pointer-events-none"></div>
           
-          <div className="relative w-36 h-36 bg-white rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] p-2 border border-yellow-400/50 flex items-center justify-center transition-transform hover:scale-[1.02] duration-300 group">
-            <div className="absolute inset-0 rounded-2xl border-2 border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            <img src="/qr_ingenio.png" alt="Scan QR Code" className="w-full h-full object-contain" />
-          </div>
-          <p className="text-[8px] text-slate-500 uppercase tracking-[0.2em] font-medium mt-2">Scan for Full Profile & Portfolio</p>
+          {profile.social.whatsapp ? (
+            <a
+              href={`https://wa.me/${profile.social.whatsapp.replace(/[^0-9]/g, '')}`}
+              target="_blank"
+              rel="noreferrer"
+              className="relative w-36 h-36 bg-white rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] p-2 border border-yellow-400/50 flex items-center justify-center transition-transform hover:scale-[1.02] duration-300 group"
+            >
+              <div className="absolute inset-0 rounded-2xl border-2 border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <img src="/qr_ingenio.png" alt="Código QR WhatsApp" className="w-full h-full object-contain" />
+            </a>
+          ) : (
+            <div className="relative w-36 h-36 bg-white rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] p-2 border border-yellow-400/50 flex items-center justify-center">
+              <img src="/qr_ingenio.png" alt="Código QR" className="w-full h-full object-contain" />
+            </div>
+          )}
+          <p className="text-[8px] text-slate-500 uppercase tracking-[0.2em] font-medium mt-2">Escanea para contactarnos por WhatsApp</p>
         </div>
 
         {/* WhatsApp CTA Button */}
