@@ -37,7 +37,7 @@ export const profiles: Record<string, ProfileData> = {
     company: "Ingenio AD s.a.s.",
     bio: "Design that Shines",
     address: "Calle 18 N° 10 - 33 local 382",
-    avatarUrl: "/ingenio_ceo.jpg",
+    avatarUrl: "/ingenio_ceo2.jpg",
     template: "ingenio",
     social: {
       whatsapp: "+57 3214914397",
@@ -49,6 +49,31 @@ export const profiles: Record<string, ProfileData> = {
     },
     theme: {
       primary: "#eab308", // Mustard yellow
+      secondary: "#000000",
+      text: "#171717",
+      background: "#ffffff",
+      buttonText: "#000000"
+    }
+  },
+  "ingenio-admin": {
+    slug: "ingenio-admin",
+    name: "Yomary Deaza",
+    title: "Gerente Administrativa",
+    company: "Ingenio AD s.a.s.",
+    bio: "Design that Shines",
+    address: "Calle 18 N° 10 - 33 local 382",
+    avatarUrl: "/ingenio_admin.png",
+    template: "ingenio",
+    social: {
+      whatsapp: "+573209614877",
+      email: "admin@mockup-ingenio.com",
+      website: "mockup",
+      facebook: "ingenioads",
+      instagram: "ingenio_ad",
+      tiktok: "ingenio_ad"
+    },
+    theme: {
+      primary: "#eab308",
       secondary: "#000000",
       text: "#171717",
       background: "#ffffff",

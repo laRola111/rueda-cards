@@ -68,7 +68,13 @@ export default function IngenioCard({ profile }: { profile: ProfileData }) {
               <div className="flex items-center gap-2 py-1.5 w-full border-b border-slate-100 group">
                 <svg className="w-3.5 h-3.5 text-yellow-500 shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 <span className="tracking-wide text-black group-hover:text-yellow-600 transition-colors">
-                  {profile.social.whatsapp.replace(/^(\+57)(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3 $4')}
+                  {(() => {
+                    const raw = profile.social.whatsapp!.replace(/\s/g, '');
+                    const digits = raw.replace(/^\+/, '');
+                    // Colombian: +57 + 10 digits  →  +57 3XX XXX XXXX
+                    const m = digits.match(/^(57)(\d{3})(\d{3})(\d{4})$/);
+                    return m ? `+${m[1]} ${m[2]} ${m[3]} ${m[4]}` : raw;
+                  })()}
                 </span>
               </div>
             )}
