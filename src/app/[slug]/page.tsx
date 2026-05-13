@@ -1,6 +1,7 @@
 import { profiles } from "@/config/cards";
 import BusinessCard from "@/components/BusinessCard";
 import WeWrapCard from "@/components/WeWrapCard";
+import IngenioCard from "@/components/IngenioCard";
 import { notFound } from "next/navigation";
 
 // Generar rutas estáticas en build time (opcional, pero recomendado para performance)
@@ -21,6 +22,10 @@ export default async function CardPage({ params }: { params: Promise<{ slug: str
 
   if (profile.template === "wewrap") {
     return <WeWrapCard profile={profile} />;
+  }
+
+  if (profile.template === "ingenio") {
+    return <IngenioCard profile={profile} />;
   }
 
   return <BusinessCard profile={profile} />;

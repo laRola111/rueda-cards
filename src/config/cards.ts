@@ -23,10 +23,35 @@ export type ProfileData = {
   avatarUrl: string;
   social: SocialLinks;
   theme: ThemeColors;
-  template?: 'rueda' | 'wewrap';
+  template?: 'rueda' | 'wewrap' | 'ingenio';
 };
 
 export const profiles: Record<string, ProfileData> = {
+  "ingenio-gerente": {
+    slug: "ingenio-gerente",
+    name: "Andres Deaza",
+    title: "Gerente",
+    company: "Ingenio AD s.a.s.",
+    bio: "Design that Shines",
+    address: "Calle 18 N° 10 - 33 local 382",
+    avatarUrl: "/ingenio_ceo.jpg",
+    template: "ingenio",
+    social: {
+      whatsapp: "+57 3214914397",
+      email: "contacto@mockup-ingenio.com",
+      website: "mockup",
+      facebook: "ingenioads",
+      instagram: "ingenio_ad",
+      tiktok: "ingenio_ad"
+    },
+    theme: {
+      primary: "#eab308", // Mustard yellow
+      secondary: "#000000",
+      text: "#171717",
+      background: "#ffffff",
+      buttonText: "#000000"
+    }
+  },
   ceo: {
     slug: "ceo",
     name: "Patricia Martinez",
